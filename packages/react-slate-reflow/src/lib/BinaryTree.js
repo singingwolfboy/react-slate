@@ -1,17 +1,12 @@
 /* @flow */
 
-export type Visitor = {
-  enter?: Node => boolean | void,
-  exit?: Node => boolean | void,
+export type Visitor<T> = {
+  enter?: T => boolean | void,
+  exit?: T => boolean | void,
 };
 
-export class Node {
-  children: Node[];
-  parent: Node;
-
-  traverse(visitor: Visitor) {
-    traverseDFS(this, visitor);
-  }
+export interface Traversable<T> {
+  children: Array<Traversable<T>>;
 }
 
 /**
@@ -20,13 +15,20 @@ export class Node {
  *
  * https://en.wikipedia.org/wiki/Depth-first_search
  */
-export function traverseDFS(root: Node, visitor: Visitor) {
+export function traverse<T>(
+  root: Traversable<T>,
+  visitor: Visitor<Traversable<T>>
+) {
+  const runHook = (fn, node) => fn && fn(node);
+
   if (
-    (visitor.enter && visitor.enter(root)) ||
-    (root.children && root.children.some(node => traverseDFS(node, visitor)))
+    runHook(visitor.enter, root) ||
+    (typeof root.children !== 'undefined' &&
+      Array.isArray(root.children) &&
+      root.children.some(node => traverse(node, visitor)))
   ) {
     return true;
   }
 
-  return visitor.exit && visitor.exit(root);
+  return runHook(visitor.exit, root);
 }
