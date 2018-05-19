@@ -43,7 +43,10 @@ export default class Node implements Traversable<Child> {
     const index =
       typeof position !== 'undefined' ? position : this.children.length;
 
-    assert(index > this.children.length + 1, 'child position out of bounds');
+    assert(
+      index <= this.children.length + 1,
+      `child position out of bounds: ${index}`
+    );
 
     // eslint-disable-next-line no-param-reassign
     child.parent = this;

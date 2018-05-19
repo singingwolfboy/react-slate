@@ -32,3 +32,16 @@ export type BorderProps = {
   thickness: 'single-line' | 'double-line',
   color: ?string,
 };
+
+export type LayoutElement = {
+  body: {
+    value: string,
+    x: number,
+    y: number,
+  },
+  styleProps: ?StyleProps,
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+};

@@ -1147,6 +1147,10 @@ bser@^2.0.0:
   dependencies:
     node-int64 "^0.4.0"
 
+buckets-js@^1.98.2:
+  version "1.98.2"
+  resolved "https://registry.yarnpkg.com/buckets-js/-/buckets-js-1.98.2.tgz#2cf936fde6d0ddc262d8987fda125639961a7c73"
+
 buffer-from@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.0.0.tgz#4cb8832d23612589b0406e9e2956c17f06fdf531"
