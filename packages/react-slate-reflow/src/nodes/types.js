@@ -19,29 +19,41 @@ export type LayoutProps = {
   display: 'block' | 'inline',
 };
 
-export type StyleProps = {
-  color: ?string,
+export type BoxStyle = {
   backgroundColor: ?string,
+};
+
+export type BodyStyle = {
+  color: ?string,
   fontWeight: ?string,
   fontStyle: ?string,
   textDecoration: ?string,
   textTransform: ?('none' | 'capitalize' | 'uppercase' | 'lowercase'),
 };
 
+export type StyleProps = BoxStyle & BodyStyle;
+
 export type BorderProps = {
   thickness: 'single-line' | 'double-line',
   color: ?string,
 };
 
-export type LayoutElement = {
-  body: {
-    value: string,
-    x: number,
-    y: number,
-  },
-  styleProps: ?StyleProps,
+export type Box = {
+  style: ?BoxStyle,
   x: number,
   y: number,
   width: number,
   height: number,
+};
+
+export type Body = {
+  value: string,
+  x: number,
+  y: number,
+  style: ?BodyStyle,
+};
+
+export type LayoutElement = {
+  boxes: Box[],
+  body: Body,
 };
