@@ -54,6 +54,6 @@ export type Body = {
 };
 
 export type LayoutElement = {
-  boxes: Box[],
-  body: Body,
+  box?: Box,
+  body?: Body,
 };
