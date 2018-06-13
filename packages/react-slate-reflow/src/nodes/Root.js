@@ -75,7 +75,12 @@ export default class Root implements Traversable<Child> {
         const currentState = {
           style: [...parentState.style, node.styleProps],
           x: parentState.x + parentState.offsetX + marginLeft,
-          y: parentState.y + parentState.offsetY + marginTop,
+          y:
+            parentState.y +
+            parentState.offsetY +
+            // If children height is 0 and inlineState was active, add height of 1
+            (parentState.offsetY === 0 && inlineState.isSwitching ? 1 : 0) +
+            marginTop,
           offsetX: paddingLeft,
           offsetY: paddingTop,
           width: size.width,
@@ -118,6 +123,7 @@ export default class Root implements Traversable<Child> {
         }
 
         state.pop();
+        inlineState.reset();
 
         return {
           calculatedHeight: paddingTop + childrenHeight + paddingBottom,
@@ -170,7 +176,7 @@ export default class Root implements Traversable<Child> {
       0
     );
 
-    console.log(height);
+    // console.log(height);
 
     return { elements };
   }
@@ -226,16 +232,19 @@ function makeElementFromText({ node, parentState, accumulatedXOffset }) {
 
 class InlineState {
   isActive = false;
+  isSwitching = false;
   accumulatedXOffset = 0;
   accumulatedYOffset = 0;
 
   reset() {
+    this.isSwitching = this.isActive;
     this.isActive = false;
     this.accumulatedXOffset = 0;
     this.accumulatedYOffset = 0;
   }
 
   makeActive(body: string) {
+    this.isSwitching = this.isActive;
     this.isActive = true;
     const { accumulatedXOffset, accumulatedYOffset } = this;
     this.accumulatedXOffset += body.length;
