@@ -8,7 +8,7 @@ import type {
   LayoutProps,
   StyleProps,
   BorderProps,
-} from './types';
+} from '../types';
 
 export default class Node implements Traversable<Child> {
   parent: ?Parent = null;

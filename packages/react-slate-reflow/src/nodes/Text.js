@@ -1,6 +1,6 @@
 /* @flow */
 
-import type { Parent } from './types';
+import type { Parent } from '../types';
 import type { Traversable } from '../lib/BinaryTree';
 
 export default class Text implements Traversable<*> {
