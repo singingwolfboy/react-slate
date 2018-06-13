@@ -1,8 +1,8 @@
 /* @flow */
 
-import Text from './Text';
-import Node from './Node';
-import Root from './Root';
+import Text from './nodes/Text';
+import Node from './nodes/Node';
+import Root from './nodes/Root';
 
 export type Child = Node | Text;
 export type Parent = Root | Node;

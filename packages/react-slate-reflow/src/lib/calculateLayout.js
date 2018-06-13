@@ -6,13 +6,15 @@ import Root from '../nodes/Root';
 import Node from '../nodes/Node';
 import Text from '../nodes/Text';
 
-export default function calculateLayout(root: Root): LayoutElement[] {
+export default function calculateLayout(
+  root: Root
+): { elements: LayoutElement[], calculatedHeight: number } {
   const size = root.size;
   const elements = [];
   const state = new Stack();
   const inlineState = new InlineState();
 
-  const visit = (node: ChildNode) => {
+  const visit = node => {
     const parentState = state.peek();
 
     if (node instanceof Node) {
@@ -24,7 +26,7 @@ export default function calculateLayout(root: Root): LayoutElement[] {
         marginBottom = 0,
         marginLeft = 0,
         paddingTop = 0,
-        paddingRight = 0,
+        // paddingRight = 0, TODO: use when width will be supported
         paddingBottom = 0,
         paddingLeft = 0,
       } = normalize(node.layoutProps || {});
@@ -35,9 +37,9 @@ export default function calculateLayout(root: Root): LayoutElement[] {
         y:
           parentState.y +
           parentState.offsetY +
+          marginTop +
           // If children height is 0 and inlineState was active, add height of 1
-          (parentState.offsetY === 0 && inlineState.isSwitching ? 1 : 0) +
-          marginTop,
+          (parentState.offsetY === 0 && inlineState.isSwitching ? 1 : 0),
         offsetX: paddingLeft,
         offsetY: paddingTop,
         width: size.width,
@@ -51,7 +53,7 @@ export default function calculateLayout(root: Root): LayoutElement[] {
 
       state.push(currentState);
 
-      let {
+      const {
         childrenHeight,
         childrenOffsetY,
         childrenOffsetX,
@@ -64,18 +66,23 @@ export default function calculateLayout(root: Root): LayoutElement[] {
         })
       );
 
-      childrenHeight += childrenHeight === 0 && inlineState.isActive ? 1 : 0;
+      const height =
+        paddingTop +
+        paddingBottom +
+        // If height of children is 0 and inline state was active, then
+        // the height should be 1 as all of the children are occupying single line.
+        (childrenHeight === 0 && inlineState.isActive ? 1 : childrenHeight);
 
+      // If the element was created, we need to update it's height.
       if (persistedElement) {
-        persistedElement.box.height =
-          paddingTop + childrenHeight + paddingBottom;
+        persistedElement.box.height = height;
       }
 
       state.pop();
       inlineState.reset();
 
       return {
-        calculatedHeight: paddingTop + childrenHeight + paddingBottom,
+        calculatedHeight: height,
         calculatedOffsetY: childrenOffsetY + marginBottom,
         calculatedOffsetX: childrenOffsetX + marginRight,
       };
@@ -117,16 +124,11 @@ export default function calculateLayout(root: Root): LayoutElement[] {
     refNode: null,
   });
 
-  const results = root.children.map(visit);
-  const height = results.reduce(
-    (acc, { calculatedHeight, calculatedOffsetY }) =>
-      acc + calculatedHeight + calculatedOffsetY,
-    0
+  const { childrenHeight: calculatedHeight } = getLayoutFromChildren(
+    root.children.map(visit)
   );
 
-  // console.log(height);
-
-  return { elements };
+  return { elements, calculatedHeight };
 }
 
 function normalize(obj): { [key: string]: * } {
