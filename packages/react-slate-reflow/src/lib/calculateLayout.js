@@ -14,7 +14,7 @@ export default function calculateLayout(
   const state = new Stack();
   const inlineState = new InlineState();
 
-  const visit = node => {
+  const visit = (node, index) => {
     const parentState = state.peek();
 
     if (node instanceof Node) {
@@ -39,7 +39,7 @@ export default function calculateLayout(
           parentState.offsetY +
           marginTop +
           // If children height is 0 and inlineState was active, add height of 1
-          (parentState.offsetY === 0 && inlineState.isSwitching ? 1 : 0),
+          (inlineState.isSwitching ? 1 : 0),
         offsetX: paddingLeft,
         offsetY: paddingTop,
         width: size.width,
@@ -58,8 +58,8 @@ export default function calculateLayout(
         childrenOffsetY,
         childrenOffsetX,
       } = getLayoutFromChildren(
-        node.children.map(child => {
-          const layoutResults = visit(child);
+        node.children.map((child, i) => {
+          const layoutResults = visit(child, i);
           // Update offset, so that next child will position itself properly.
           currentState.offsetY += layoutResults.calculatedHeight;
           return layoutResults;
@@ -96,6 +96,11 @@ export default function calculateLayout(
           node,
           parentState,
           accumulatedXOffset,
+          offsetY: 0,
+          // inlineState.isSwitching &&
+          // (index > 0 || node.parent.children[index - 1] instanceof Node)
+          //   ? 1
+          //   : 0,
         })
       );
 
@@ -168,12 +173,17 @@ function makeStyle(styles, blacklist = []) {
   return Object.keys(flatStyles).length ? flatStyles : null;
 }
 
-function makeElementFromText({ node, parentState, accumulatedXOffset }) {
+function makeElementFromText({
+  node,
+  parentState,
+  accumulatedXOffset,
+  offsetY,
+}) {
   return {
     body: {
       value: node.body,
       x: parentState.x + parentState.offsetX + accumulatedXOffset,
-      y: parentState.y + parentState.offsetY,
+      y: parentState.y + parentState.offsetY + offsetY,
       style: makeStyle(parentState.style, ['backgroundColor']),
     },
   };
@@ -198,14 +208,14 @@ class InlineState {
   accumulatedYOffset = 0;
 
   reset() {
-    this.isSwitching = this.isActive;
+    this.isSwitching = this.isActive === true;
     this.isActive = false;
     this.accumulatedXOffset = 0;
     this.accumulatedYOffset = 0;
   }
 
   makeActive(body: string) {
-    this.isSwitching = this.isActive;
+    this.isSwitching = this.isActive === false;
     this.isActive = true;
     const { accumulatedXOffset, accumulatedYOffset } = this;
     this.accumulatedXOffset += body.length;

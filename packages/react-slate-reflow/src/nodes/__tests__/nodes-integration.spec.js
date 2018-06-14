@@ -236,97 +236,244 @@ describe('nodes integration suite', () => {
         ]);
       });
     });
-  });
 
-  describe('for node -> [text, node -> text]', () => {
-    function getTree() {
-      const root = new Root({ width: 20, height: 10 });
-      const outerNode = new Node();
-      const text = new Text();
-      const innerNode = new Node();
-      const innerText = new Text();
+    describe('for node -> [text, node -> text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const outerNode = new Node();
+        const text = new Text();
+        const innerNode = new Node();
+        const innerText = new Text();
 
-      text.setBody('Hello');
-      innerText.setBody('World');
-      innerNode.insertChild(innerText);
-      outerNode.insertChild(text);
-      outerNode.insertChild(innerNode);
-      root.insertChild(outerNode);
+        text.setBody('Hello');
+        innerText.setBody('World');
+        innerNode.insertChild(innerText);
+        outerNode.insertChild(text);
+        outerNode.insertChild(innerNode);
+        root.insertChild(outerNode);
 
-      return root;
-    }
+        return root;
+      }
 
-    it('without style/layout props', () => {
-      const root = getTree();
-      const { elements } = root.calculateLayout();
-      expect(elements).toEqual([
-        {
-          body: {
-            x: 0,
-            y: 0,
-            value: 'Hello',
-            style: null,
+      it('without style/layout props', () => {
+        const root = getTree();
+        const { elements } = root.calculateLayout();
+        expect(elements).toEqual([
+          {
+            body: {
+              x: 0,
+              y: 0,
+              value: 'Hello',
+              style: null,
+            },
           },
-        },
-        {
-          body: {
-            x: 0,
-            y: 1,
-            value: 'World',
-            style: null,
+          {
+            body: {
+              x: 0,
+              y: 1,
+              value: 'World',
+              style: null,
+            },
           },
-        },
-      ]);
+        ]);
+      });
+    });
+
+    describe('for node -> [node -> text, text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const outerNode = new Node();
+        const text = new Text();
+        const innerNode = new Node();
+        const innerText = new Text();
+
+        text.setBody('World');
+        innerText.setBody('Hello');
+        innerNode.insertChild(innerText);
+        outerNode.insertChild(innerNode);
+        outerNode.insertChild(text);
+        root.insertChild(outerNode);
+
+        return root;
+      }
+
+      it('without style/layout props', () => {
+        const root = getTree();
+        const { elements } = root.calculateLayout();
+        expect(elements).toEqual([
+          {
+            body: {
+              x: 0,
+              y: 0,
+              value: 'Hello',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 1,
+              value: 'World',
+              style: null,
+            },
+          },
+        ]);
+      });
+    });
+
+    describe('for node -> [node -> text, node -> text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const outerNode = new Node();
+        const innerNode1 = new Node();
+        const text1 = new Text();
+        const innerNode2 = new Node();
+        const text2 = new Text();
+
+        text1.setBody('Hello');
+        text2.setBody('World');
+        innerNode1.insertChild(text1);
+        innerNode2.insertChild(text2);
+        outerNode.insertChild(innerNode1);
+        outerNode.insertChild(innerNode2);
+        root.insertChild(outerNode);
+
+        return root;
+      }
+
+      it('without style/layout props', () => {
+        const root = getTree();
+        const { elements } = root.calculateLayout();
+        expect(elements).toEqual([
+          {
+            body: {
+              x: 0,
+              y: 0,
+              value: 'Hello',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 1,
+              value: 'World',
+              style: null,
+            },
+          },
+        ]);
+      });
+    });
+
+    describe('for node -> [text, node -> text, text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const outerNode = new Node();
+        const innerNode = new Node();
+        const text1 = new Text();
+        const text2 = new Text();
+        const text3 = new Text();
+
+        text1.setBody('Brave');
+        text2.setBody('New');
+        text3.setBody('World');
+        innerNode.insertChild(text2);
+        outerNode.insertChild(text1);
+        outerNode.insertChild(innerNode);
+        outerNode.insertChild(text3);
+        root.insertChild(outerNode);
+
+        return root;
+      }
+
+      it('without style/layout props', () => {
+        const root = getTree();
+        debugger // eslint-disable-line
+        const { elements } = root.calculateLayout();
+        expect(elements).toEqual([
+          {
+            body: {
+              x: 0,
+              y: 0,
+              value: 'Brave',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 1,
+              value: 'New',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 2,
+              value: 'World',
+              style: null,
+            },
+          },
+        ]);
+      });
+    });
+
+    describe('for node -> [node -> text, text, node -> text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const outerNode = new Node();
+        const innerNode1 = new Node();
+        const innerNode2 = new Node();
+        const text1 = new Text();
+        const text2 = new Text();
+        const text3 = new Text();
+
+        text1.setBody('Brave');
+        text2.setBody('New');
+        text3.setBody('World');
+        innerNode1.insertChild(text1);
+        innerNode2.insertChild(text3);
+        outerNode.insertChild(innerNode1);
+        outerNode.insertChild(text2);
+        outerNode.insertChild(innerNode2);
+        root.insertChild(outerNode);
+
+        return root;
+      }
+
+      it('without style/layout props', () => {
+        const root = getTree();
+        const { elements } = root.calculateLayout();
+        expect(elements).toEqual([
+          {
+            body: {
+              x: 0,
+              y: 0,
+              value: 'Brave',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 1,
+              value: 'New',
+              style: null,
+            },
+          },
+          {
+            body: {
+              x: 0,
+              y: 2,
+              value: 'World',
+              style: null,
+            },
+          },
+        ]);
+      });
     });
   });
-
-  describe('for node -> [node -> text, text]', () => {
-    function getTree() {
-      const root = new Root({ width: 20, height: 10 });
-      const outerNode = new Node();
-      const text = new Text();
-      const innerNode = new Node();
-      const innerText = new Text();
-
-      text.setBody('World');
-      innerText.setBody('Hello');
-      innerNode.insertChild(innerText);
-      outerNode.insertChild(innerNode);
-      outerNode.insertChild(text);
-      root.insertChild(outerNode);
-
-      return root;
-    }
-
-    it('without style/layout props', () => {
-      const root = getTree();
-      const { elements } = root.calculateLayout();
-      expect(elements).toEqual([
-        {
-          body: {
-            x: 0,
-            y: 0,
-            value: 'Hello',
-            style: null,
-          },
-        },
-        {
-          body: {
-            x: 0,
-            y: 1,
-            value: 'World',
-            style: null,
-          },
-        },
-      ]);
-    });
-  });
-
-  describe('for node -> [node -> text, node -> text]', () => {});
-
-  describe('for node -> [text, node -> text, text]', () => {});
-
-  describe('for node -> [node -> text, text, node -> text]', () => {});
 
   it('node -> [node (bg) -> text, node -> text]', () => {
     const root = new Root({ width: 20, height: 10 });
