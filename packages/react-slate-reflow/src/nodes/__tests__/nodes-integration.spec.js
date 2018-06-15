@@ -19,17 +19,18 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
 
       xit('with style and layout props', () => {
@@ -90,17 +91,18 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
 
       xit('with style and layout props', () => {
@@ -173,25 +175,26 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 5,
-              y: 0,
-              value: ' World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 5,
+        //       y: 0,
+        //       value: ' World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
 
       xit('with style and layout props', () => {
@@ -257,25 +260,26 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 1,
-              value: 'World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 1,
+        //       value: 'World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
     });
 
@@ -299,25 +303,26 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 1,
-              value: 'World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 1,
+        //       value: 'World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
     });
 
@@ -343,25 +348,26 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Hello',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 1,
-              value: 'World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Hello',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 1,
+        //       value: 'World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
     });
 
@@ -388,33 +394,34 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Brave',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 1,
-              value: 'New',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 2,
-              value: 'World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Brave',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 1,
+        //       value: 'New',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 2,
+        //       value: 'World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
     });
 
@@ -443,33 +450,34 @@ describe('nodes integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            body: {
-              x: 0,
-              y: 0,
-              value: 'Brave',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 1,
-              value: 'New',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 0,
-              y: 2,
-              value: 'World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        // expect(elements).toEqual([
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 0,
+        //       value: 'Brave',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 1,
+        //       value: 'New',
+        //       style: null,
+        //     },
+        //   },
+        //   {
+        //     body: {
+        //       x: 0,
+        //       y: 2,
+        //       value: 'World',
+        //       style: null,
+        //     },
+        //   },
+        // ]);
       });
     });
 
@@ -503,23 +511,10 @@ describe('nodes integration suite', () => {
         return root;
       }
 
-      fit('without style/layout props', () => {
+      it('without style/layout props', () => {
         const root = getTree();
-        const { elements, layoutTree } = root.calculateLayout();
-        console.log(
-          require('util').inspect(
-            layoutTree.getJsonTree(),
-            false,
-            Number.MAX_VALUE,
-            true
-          )
-        );
-        // expect(elements).toEqual([
-        //   { body: { value: 'Text1', x: 0, y: 0, style: null } },
-        //   { body: { value: 'Text2', x: 0, y: 1, style: null } },
-        //   { body: { value: 'Text3', x: 5, y: 1, style: null } },
-        //   { body: { value: 'Text4', x: 0, y: 2, style: null } },
-        // ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
   });
