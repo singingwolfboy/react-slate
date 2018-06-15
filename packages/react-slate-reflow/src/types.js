@@ -57,3 +57,18 @@ export type LayoutElement = {
   box?: Box,
   body?: Body,
 };
+
+export interface LayoutBuilder {
+  calculatePlacement(): void;
+  getJsonTree(): Object;
+}
+
+export type Placement = {
+  x: number,
+  y: number,
+};
+
+export type Dimensions = {
+  width: number,
+  height: number,
+};

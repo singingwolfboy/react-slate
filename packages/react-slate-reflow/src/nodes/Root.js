@@ -3,7 +3,7 @@
 import assert from 'assert';
 import { traverse, type Traversable, type Visitor } from '../lib/BinaryTree';
 import type { Child } from '../types';
-import calculateLayout from '../lib/calculateLayout';
+import calculateLayout from '../layout/calculateLayout';
 
 type Size = {
   width: number,
