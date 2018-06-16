@@ -32,7 +32,6 @@ export default class RootLayout implements LayoutBuilder {
 
   calculateDimensions(childLayout: BlockLayout | InlineLayout) {
     const childDimensions = childLayout.getDimensionsWithBounds();
-    console.log('root', childDimensions);
     if (childLayout instanceof BlockLayout) {
       this.dimensions.width = Math.max(
         this.dimensions.width,

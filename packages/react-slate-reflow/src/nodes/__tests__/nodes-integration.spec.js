@@ -127,7 +127,7 @@ describe('nodes integration suite', () => {
         return root;
       }
 
-      xit('without style/layout props', () => {
+      it('without style/layout props', () => {
         const root = getTree();
         const { layoutTree } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
@@ -335,6 +335,33 @@ describe('nodes integration suite', () => {
         //   },
         // ]);
       });
+
+      it('with layout props', () => {
+        const root = getTree();
+
+        root.children[0].setLayoutProps({
+          marginTop: 1,
+          paddingLeft: 1,
+          paddingRight: 1,
+        });
+
+        root.children[0].children[0].setLayoutProps({
+          marginLeft: 1,
+          marginTop: 1,
+          marginRight: 1,
+          marginBottom: 1,
+        });
+
+        root.children[0].children[1].setLayoutProps({
+          paddingLeft: 1,
+          paddingTop: 1,
+          paddingRight: 1,
+          paddingBottom: 1,
+        });
+
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+      });
     });
 
     describe('for node -> [text, node -> text, text]', () => {
@@ -388,6 +415,26 @@ describe('nodes integration suite', () => {
         //     },
         //   },
         // ]);
+      });
+
+      it('with layout props', () => {
+        const root = getTree();
+
+        root.children[0].setLayoutProps({
+          marginTop: 1,
+          marginLeft: 1,
+          marginRight: 1,
+        });
+
+        root.children[0].children[1].setLayoutProps({
+          paddingLeft: 2,
+          paddingTop: 1,
+          paddingRight: 2,
+          paddingBottom: 1,
+        });
+
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
 
@@ -445,6 +492,23 @@ describe('nodes integration suite', () => {
         //   },
         // ]);
       });
+
+      it('with layout props', () => {
+        const root = getTree();
+
+        root.children[0].children[0].setLayoutProps({
+          paddingTop: 1,
+          paddingBottom: 1,
+        });
+
+        root.children[0].children[2].setLayoutProps({
+          marginTop: 1,
+          marginBottom: 1,
+        });
+
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+      });
     });
 
     describe('for node -> [node -> text, text, node -> [text, text]]', () => {
@@ -483,66 +547,5 @@ describe('nodes integration suite', () => {
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
-  });
-
-  xit('node -> [node (bg) -> text, node -> text]', () => {
-    const root = new Root({ width: 20, height: 10 });
-    const parentNode = new Node();
-
-    const node1 = new Node();
-    const text1 = new Text();
-    text1.setBody('Hello');
-    node1.insertChild(text1);
-    node1.setLayoutProps({
-      marginLeft: 2,
-      paddingBottom: 1,
-      paddingTop: 1,
-    });
-    node1.setStyleProps({ backgroundColor: 'red' });
-
-    const node2 = new Node();
-    const text2 = new Text();
-    text2.setBody('World');
-    node2.insertChild(text2);
-    node2.setLayoutProps({
-      marginTop: 2,
-    });
-
-    parentNode.insertChild(node1);
-    parentNode.insertChild(node2);
-    root.insertChild(parentNode);
-
-      debugger // eslint-disable-line
-    const { elements } = root.calculateLayout();
-
-    expect(elements).toEqual([
-      {
-        box: {
-          style: {
-            backgroundColor: 'red',
-          },
-          x: 2,
-          y: 0,
-          width: 20,
-          height: 3,
-        },
-      },
-      {
-        body: {
-          x: 2,
-          y: 1,
-          value: 'Hello',
-          style: null,
-        },
-      },
-      {
-        body: {
-          x: 0,
-          y: 5,
-          value: 'World',
-          style: null,
-        },
-      },
-    ]);
   });
 });
