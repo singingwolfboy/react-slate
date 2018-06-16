@@ -4,6 +4,7 @@ import { Stack } from 'buckets-js';
 import Root from '../nodes/Root';
 import Node from '../nodes/Node';
 import Text from '../nodes/Text';
+import RootLayout from './RootLayout';
 import BlockLayout from './BlockLayout';
 import InlineLayout from './InlineLayout';
 
@@ -60,7 +61,7 @@ export default function calculateLayout(
 
   // Initial block layout element for Root.
   // $FlowFixMe
-  const rootLayout = new BlockLayout();
+  const rootLayout = new RootLayout();
   layoutState.push(rootLayout);
 
   root.children.forEach(child => {
@@ -69,12 +70,6 @@ export default function calculateLayout(
 
   return { elements, layoutTree: rootLayout };
 }
-
-// function normalize(obj): { [key: string]: * } {
-//   return Object.keys(obj)
-//     .filter(key => typeof obj[key] !== 'undefined' || obj[key] !== null)
-//     .reduce((acc, key) => ({ ...acc, [key]: obj[key] }), {});
-// }
 
 // function shouldMakeElementFromNode(node: Node) {
 //   return node.styleProps && node.styleProps.backgroundColor;

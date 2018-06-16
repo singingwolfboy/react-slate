@@ -30,6 +30,12 @@ export default class InlineLayout implements LayoutBuilder {
         y: this.parentLayout.placement.y + this.parentLayout.dimensions.height,
       };
     }
+    this.placement.x += this.parentLayout.insetBounds.left;
+    this.placement.y += this.parentLayout.insetBounds.top;
+  }
+
+  getDimensionsWithBounds() {
+    return this.dimensions;
   }
 
   getJsonTree() {

@@ -19,6 +19,13 @@ export type LayoutProps = {
   display: 'block' | 'inline',
 };
 
+export type Bounds = {
+  top: number,
+  right: number,
+  bottom: number,
+  left: number,
+};
+
 export type BoxStyle = {
   backgroundColor: ?string,
 };
@@ -60,6 +67,7 @@ export type LayoutElement = {
 
 export interface LayoutBuilder {
   calculatePlacement(): void;
+  getDimensionsWithBounds(): Dimensions;
   getJsonTree(): Object;
 }
 

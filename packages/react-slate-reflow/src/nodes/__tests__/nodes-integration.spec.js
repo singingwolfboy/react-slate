@@ -33,44 +33,20 @@ describe('nodes integration suite', () => {
         // ]);
       });
 
-      xit('with style and layout props', () => {
+      it('with layout props', () => {
         const root = getTree();
 
         root.children[0].setLayoutProps({
           marginLeft: 2,
           marginTop: 1,
           paddingTop: 1,
-        });
-        root.children[0].setStyleProps({
-          backgroundColor: 'red',
-          color: 'blue',
+          paddingLeft: 2,
+          paddingRight: 2,
+          paddingBottom: 1,
         });
 
-        const { elements } = root.calculateLayout();
-        expect(elements).toEqual([
-          {
-            box: {
-              style: {
-                backgroundColor: 'red',
-                color: 'blue',
-              },
-              x: 2,
-              y: 1,
-              width: 20,
-              height: 2,
-            },
-          },
-          {
-            body: {
-              x: 2,
-              y: 2,
-              value: 'Hello World',
-              style: {
-                color: 'blue',
-              },
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
 
@@ -105,55 +81,22 @@ describe('nodes integration suite', () => {
         // ]);
       });
 
-      xit('with style and layout props', () => {
+      it('with layout props', () => {
         const root = getTree();
 
         root.children[0].setLayoutProps({
-          marginTop: 1,
           paddingTop: 1,
+          paddingLeft: 1,
         });
-        root.children[0].setStyleProps({ backgroundColor: 'red' });
 
         root.children[0].children[0].setLayoutProps({
+          paddingTop: 1,
           marginLeft: 2,
           marginRight: 2,
         });
-        root.children[0].children[0].setStyleProps({ backgroundColor: 'blue' });
 
-        const { elements } = root.calculateLayout();
-
-        expect(elements).toEqual([
-          {
-            box: {
-              style: {
-                backgroundColor: 'red',
-              },
-              x: 0,
-              y: 1,
-              width: 20,
-              height: 2,
-            },
-          },
-          {
-            box: {
-              style: {
-                backgroundColor: 'blue',
-              },
-              x: 2,
-              y: 2,
-              width: 20,
-              height: 1,
-            },
-          },
-          {
-            body: {
-              x: 2,
-              y: 2,
-              value: 'Hello World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
 
@@ -173,7 +116,7 @@ describe('nodes integration suite', () => {
         return root;
       }
 
-      it('without style/layout props', () => {
+      xit('without style/layout props', () => {
         const root = getTree();
         const { layoutTree } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
@@ -197,46 +140,20 @@ describe('nodes integration suite', () => {
         // ]);
       });
 
-      xit('with style and layout props', () => {
+      it('with layout props', () => {
         const root = getTree();
 
         root.children[0].setLayoutProps({
           marginLeft: 2,
           marginTop: 2,
+          paddingTop: 1,
+          paddingRight: 1,
+          paddingBottom: 1,
+          paddingLeft: 1,
         });
-        root.children[0].setStyleProps({ backgroundColor: 'blue' });
 
-        const { elements } = root.calculateLayout();
-
-        expect(elements).toEqual([
-          {
-            box: {
-              style: {
-                backgroundColor: 'blue',
-              },
-              x: 2,
-              y: 2,
-              width: 20,
-              height: 1,
-            },
-          },
-          {
-            body: {
-              x: 2,
-              y: 2,
-              value: 'Hello',
-              style: null,
-            },
-          },
-          {
-            body: {
-              x: 7,
-              y: 2,
-              value: ' World',
-              style: null,
-            },
-          },
-        ]);
+        const { layoutTree } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
       });
     });
 
