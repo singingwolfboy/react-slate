@@ -30,9 +30,9 @@ export default class BlockLayout implements LayoutBuilder {
     this.parentLayout = parentLayout;
 
     parentLayout && parentLayout.children.push(this);
-    if (node) {
+    if (node && node.layoutProps) {
       const { insetBounds, outsetBounds } = normalizeLayoutProps(
-        node.layoutProps || {}
+        node.layoutProps
       );
       this.insetBounds = insetBounds;
       this.outsetBounds = outsetBounds;

@@ -6,6 +6,7 @@ import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
 
 export default class RootLayout implements LayoutBuilder {
   children: Array<BlockLayout | InlineLayout> = [];
+  lastChildLayout: ?(BlockLayout | InlineLayout) = null;
   placement: Placement = { x: 0, y: 0 };
   dimensions: Dimensions = { width: 0, height: 0 };
   insetBounds: Bounds = {

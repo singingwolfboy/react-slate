@@ -273,6 +273,72 @@ Object {
 }
 `;
 
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 4,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
 exports[`nodes integration suite should calculate layout for node -> [node -> text, text] without style/layout props 1`] = `
 Object {
   "children": Array [
@@ -408,6 +474,72 @@ Object {
   "dimensions": Object {
     "height": 3,
     "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 3,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 3,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
   },
   "placement": Object {
     "x": 0,

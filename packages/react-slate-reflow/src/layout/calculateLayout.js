@@ -8,11 +8,11 @@ import RootLayout from './RootLayout';
 import BlockLayout from './BlockLayout';
 import InlineLayout from './InlineLayout';
 
-import type { LayoutElement } from '../types';
+import type { RenderElement } from '../types';
 
 export default function calculateLayout(
   root: Root
-): { elements: LayoutElement[], layoutTree: BlockLayout } {
+): { elements: RenderElement[], layoutTree: RootLayout } {
   // const size = root.size;
   const elements = [];
   const layoutState = new Stack();
@@ -57,6 +57,8 @@ export default function calculateLayout(
       // displayState.exitInline();
       return currentLayout;
     }
+
+    throw new Error('Unsupported node');
   };
 
   // Initial block layout element for Root.

@@ -60,7 +60,7 @@ export type Body = {
   style: ?BodyStyle,
 };
 
-export type LayoutElement = {
+export type RenderElement = {
   box?: Box,
   body?: Body,
 };
