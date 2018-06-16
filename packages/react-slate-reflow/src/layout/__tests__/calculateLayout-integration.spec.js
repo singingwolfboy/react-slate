@@ -1,19 +1,8 @@
-import Root from '../Root';
-import Node from '../Node';
-import Text from '../Text';
+import Root from '../../nodes/Root';
+import Node from '../../nodes/Node';
+import Text from '../../nodes/Text';
 
-function inspect(layoutTree) {
-  console.log(
-    require('util').inspect(
-      layoutTree.getJsonTree(),
-      false,
-      Number.MAX_VALUE,
-      true
-    )
-  );
-}
-
-describe('nodes integration suite', () => {
+describe('calculateLayout integration suite', () => {
   describe('should calculate layout', () => {
     describe('for node -> text', () => {
       function getTree() {

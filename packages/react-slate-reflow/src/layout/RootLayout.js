@@ -31,6 +31,7 @@ export default class RootLayout implements LayoutBuilder {
   }
 
   calculateDimensions(childLayout: BlockLayout | InlineLayout) {
+    // TODO: make this code shareable between RootLayout and BlockLayout, since it's the same
     const childDimensions = childLayout.getDimensionsWithBounds();
     if (childLayout instanceof BlockLayout) {
       this.dimensions.width = Math.max(

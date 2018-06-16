@@ -38,6 +38,16 @@ export default class InlineLayout implements LayoutBuilder {
     return this.dimensions;
   }
 
+  makeRenderElement() {
+    return {
+      body: {
+        value: this.node.body,
+        style: null,
+        ...this.placement,
+      },
+    };
+  }
+
   getJsonTree() {
     return {
       type: InlineLayout.name,

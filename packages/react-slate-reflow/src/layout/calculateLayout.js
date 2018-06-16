@@ -47,14 +47,7 @@ export default function calculateLayout(
     } else if (node instanceof Text) {
       const currentLayout = new InlineLayout(node, parentLayout);
       currentLayout.calculatePlacement();
-      // displayState.enterInline();
-      // const textLayoutState = parentLayoutState.withDisplayState(
-      //   displayState,
-      //   node.body
-      // );
-      // elements.push(textLayoutState.makeElement(node.body, null));
-      // // displayState.addChildOffset(node.body.length);
-      // displayState.exitInline();
+      elements.push(currentLayout.makeRenderElement());
       return currentLayout;
     }
 

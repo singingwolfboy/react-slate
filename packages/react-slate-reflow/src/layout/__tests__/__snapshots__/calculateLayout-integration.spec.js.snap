@@ -1,0 +1,2319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 2,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 2,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 2,
+                "y": 5,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 7,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 4,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 9,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 7,
+    "width": 9,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, text, node -> [text, text]] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Text1",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "Text2",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "Text3",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+            Object {
+              "body": "Text4",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 5,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 10,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 10,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 10,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Brave",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "New",
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 5,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 5,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 7,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 7,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Brave",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "New",
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 4,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [node -> text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node -> text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Brave",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "New",
+              "dimensions": Object {
+                "height": 1,
+                "width": 3,
+              },
+              "placement": Object {
+                "x": 3,
+                "y": 3,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 7,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 5,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 5,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 1,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 9,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node -> text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Brave",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "New",
+              "dimensions": Object {
+                "height": 1,
+                "width": 3,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 3,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 3,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 3,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "body": " World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 6,
+          },
+          "placement": Object {
+            "x": 8,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 13,
+      },
+      "placement": Object {
+        "x": 2,
+        "y": 2,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 5,
+    "width": 15,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "body": " World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 6,
+          },
+          "placement": Object {
+            "x": 5,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> node -> text with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 11,
+              },
+              "placement": Object {
+                "x": 3,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 2,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 3,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 16,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 16,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> node -> text without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 11,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> text with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 4,
+            "y": 2,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 15,
+      },
+      "placement": Object {
+        "x": 2,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 4,
+    "width": 17,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> text without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 2,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 2,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 2,
+                "y": 5,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 7,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 4,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 9,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 7,
+    "width": 9,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text, node -> [text, text]] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Text1",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "Text2",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "Text3",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+            Object {
+              "body": "Text4",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 5,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 10,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 10,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 10,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Brave",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "New",
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 5,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 5,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 7,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 7,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Brave",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "New",
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 4,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [node -> text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, node -> text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Brave",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "New",
+              "dimensions": Object {
+                "height": 1,
+                "width": 3,
+              },
+              "placement": Object {
+                "x": 3,
+                "y": 3,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 3,
+            "width": 7,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 2,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 5,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 5,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 1,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 9,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, node -> text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Brave",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "New",
+              "dimensions": Object {
+                "height": 1,
+                "width": 3,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 3,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+        Object {
+          "body": "World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 2,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, node -> text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 1,
+                "y": 3,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 1,
+            "y": 3,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 6,
+        "width": 7,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 6,
+    "width": 7,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, node -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": "World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 5,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 1,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 2,
+        "width": 5,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 2,
+    "width": 5,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, text] with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 3,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "body": " World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 6,
+          },
+          "placement": Object {
+            "x": 8,
+            "y": 3,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 13,
+      },
+      "placement": Object {
+        "x": 2,
+        "y": 2,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 5,
+    "width": 15,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> [text, text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+        Object {
+          "body": " World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 6,
+          },
+          "placement": Object {
+            "x": 5,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> node -> text with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 11,
+              },
+              "placement": Object {
+                "x": 3,
+                "y": 2,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 2,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 3,
+            "y": 1,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 16,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 3,
+    "width": 16,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> node -> text without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            Object {
+              "body": "Hello World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 11,
+              },
+              "placement": Object {
+                "x": 0,
+                "y": 0,
+              },
+              "type": "InlineLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "BlockLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> text with layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 4,
+            "y": 2,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 3,
+        "width": 15,
+      },
+      "placement": Object {
+        "x": 2,
+        "y": 1,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 4,
+    "width": 17,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`nodes integration suite should calculate layout for node -> text without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello World",
+          "dimensions": Object {
+            "height": 1,
+            "width": 11,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "InlineLayout",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "BlockLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;

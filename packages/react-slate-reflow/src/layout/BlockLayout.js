@@ -83,7 +83,6 @@ export default class BlockLayout implements LayoutBuilder {
 
   calculateDimensions(childLayout: BlockLayout | InlineLayout) {
     const childDimensions = childLayout.getDimensionsWithBounds();
-    console.log('block', childDimensions);
     if (childLayout instanceof BlockLayout) {
       this.dimensions.width = Math.max(
         this.dimensions.width,
