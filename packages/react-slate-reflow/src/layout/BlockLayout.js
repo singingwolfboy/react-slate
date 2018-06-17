@@ -3,6 +3,7 @@
 import InlineLayout from './InlineLayout';
 import Node from '../nodes/Node';
 import normalizeLayoutProps from './normalizeLayoutProps';
+import { makeBlockStyle } from './makeStyle';
 import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
 
 export default class BlockLayout implements LayoutBuilder {
@@ -104,6 +105,20 @@ export default class BlockLayout implements LayoutBuilder {
       }
     }
     this.lastChildLayout = childLayout;
+  }
+
+  shouldMakeRenderElement() {
+    return this.node.styleProps && this.node.styleProps.backgroundColor;
+  }
+
+  makeRenderElement() {
+    return {
+      box: {
+        style: makeBlockStyle(this.node.styleProps),
+        ...this.placement,
+        ...this.getOwnDimensions(),
+      },
+    };
   }
 
   getJsonTree() {

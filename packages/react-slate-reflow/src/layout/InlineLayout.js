@@ -2,7 +2,8 @@
 
 import BlockLayout from './BlockLayout';
 import Text from '../nodes/Text';
-import type { LayoutBuilder, Placement, Dimensions } from '../types';
+import { makeInlineStyle } from './makeStyle';
+import type { LayoutBuilder, Placement, Dimensions, BodyStyle } from '../types';
 
 export default class InlineLayout implements LayoutBuilder {
   parentLayout: BlockLayout;
@@ -42,7 +43,7 @@ export default class InlineLayout implements LayoutBuilder {
     return {
       body: {
         value: this.node.body,
-        style: null,
+        style: makeInlineStyle(collectStyleProps(this)),
         ...this.placement,
       },
     };
@@ -56,4 +57,20 @@ export default class InlineLayout implements LayoutBuilder {
       body: this.node.body,
     };
   }
+}
+
+function collectStyleProps(layout: InlineLayout) {
+  const styleProps = [];
+  let currentLayout = layout.parentLayout;
+  while (currentLayout && currentLayout.node) {
+    if (currentLayout.node.styleProps) {
+      const {
+        backgroundColor,
+        ...inlineStyleProps
+      } = currentLayout.node.styleProps;
+      styleProps.push((inlineStyleProps: BodyStyle));
+    }
+    currentLayout = currentLayout.parentLayout;
+  }
+  return styleProps.reverse();
 }

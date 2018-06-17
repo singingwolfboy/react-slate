@@ -12,9 +12,9 @@ import type { RenderElement } from '../types';
 
 export default function calculateLayout(
   root: Root
-): { elements: RenderElement[], layoutTree: RootLayout } {
+): { renderElements: RenderElement[], layoutTree: RootLayout } {
   // const size = root.size;
-  const elements = [];
+  const renderElements = [];
   const layoutState = new Stack();
 
   const visit = node => {
@@ -24,11 +24,12 @@ export default function calculateLayout(
       const currentLayout = new BlockLayout(node, parentLayout);
       currentLayout.calculatePlacement();
 
-      // let persistedElement = null;
-      // if (shouldMakeElementFromNode(node)) {
-      //   persistedElement = makeElementFromNodeState(currentState);
-      //   elements.push(persistedElement);
-      // }
+      let boxRenderElementIndex = -1;
+      if (currentLayout.shouldMakeRenderElement()) {
+        // $FlowFixMe
+        renderElements.push(null);
+        boxRenderElementIndex = renderElements.length - 1;
+      }
 
       layoutState.push(currentLayout);
 
@@ -39,15 +40,17 @@ export default function calculateLayout(
 
       layoutState.pop();
 
-      // If the element was created, we need to update it's height.
-      // if (persistedElement) {
-      //   persistedElement.box.height = height;
-      // }
+      if (boxRenderElementIndex > -1) {
+        renderElements[
+          boxRenderElementIndex
+        ] = currentLayout.makeRenderElement();
+      }
+
       return currentLayout;
     } else if (node instanceof Text) {
       const currentLayout = new InlineLayout(node, parentLayout);
       currentLayout.calculatePlacement();
-      elements.push(currentLayout.makeRenderElement());
+      renderElements.push(currentLayout.makeRenderElement());
       return currentLayout;
     }
 
@@ -55,7 +58,6 @@ export default function calculateLayout(
   };
 
   // Initial block layout element for Root.
-  // $FlowFixMe
   const rootLayout = new RootLayout();
   layoutState.push(rootLayout);
 
@@ -63,25 +65,5 @@ export default function calculateLayout(
     rootLayout.calculateDimensions(visit(child));
   });
 
-  return { elements, layoutTree: rootLayout };
+  return { renderElements, layoutTree: rootLayout };
 }
-
-// function shouldMakeElementFromNode(node: Node) {
-//   return node.styleProps && node.styleProps.backgroundColor;
-// }
-
-// function makeStyle(styles, blacklist = []) {
-//   const flatStyles = styles.reduce(
-//     (acc, style) => ({
-//       ...acc,
-//       ...(style &&
-//         blacklist.reduce((currentStyles, key) => {
-//           const { [key]: omit, ...rest } = currentStyles;
-//           return rest;
-//         }, style)),
-//     }),
-//     {}
-//   );
-
-//   return Object.keys(flatStyles).length ? flatStyles : null;
-// }

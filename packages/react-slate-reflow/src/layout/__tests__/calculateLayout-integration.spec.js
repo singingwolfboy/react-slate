@@ -19,18 +19,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -67,18 +58,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -95,8 +77,9 @@ describe('calculateLayout integration suite', () => {
           marginRight: 2,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -118,26 +101,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 5,
-        //       y: 0,
-        //       value: ' World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -177,26 +143,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 1,
-        //       value: 'World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -214,8 +163,9 @@ describe('calculateLayout integration suite', () => {
           marginBottom: 1,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -239,26 +189,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 1,
-        //       value: 'World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -276,8 +209,9 @@ describe('calculateLayout integration suite', () => {
           marginBottom: 1,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -303,26 +237,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Hello',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 1,
-        //       value: 'World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -348,8 +265,9 @@ describe('calculateLayout integration suite', () => {
           paddingBottom: 1,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -376,34 +294,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Brave',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 1,
-        //       value: 'New',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 2,
-        //       value: 'World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -422,8 +315,9 @@ describe('calculateLayout integration suite', () => {
           paddingBottom: 1,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -452,34 +346,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
-        // expect(elements).toEqual([
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 0,
-        //       value: 'Brave',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 1,
-        //       value: 'New',
-        //       style: null,
-        //     },
-        //   },
-        //   {
-        //     body: {
-        //       x: 0,
-        //       y: 2,
-        //       value: 'World',
-        //       style: null,
-        //     },
-        //   },
-        // ]);
+        expect(renderElements).toMatchSnapshot();
       });
 
       it('with layout props', () => {
@@ -495,8 +364,9 @@ describe('calculateLayout integration suite', () => {
           marginBottom: 1,
         });
 
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
 
@@ -532,8 +402,9 @@ describe('calculateLayout integration suite', () => {
 
       it('without style/layout props', () => {
         const root = getTree();
-        const { layoutTree } = root.calculateLayout();
+        const { layoutTree, renderElements } = root.calculateLayout();
         expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
       });
     });
   });
