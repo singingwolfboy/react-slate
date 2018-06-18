@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from '@react-slate/core';
 import { Spinner, ProgressBar } from '@react-slate/components';
-import { KeyPress } from '@react-slate/interactive';
+import { KeyPress, ScrollView } from '@react-slate/interactive';
 
 const components = ['Spinner', 'ProgressBar'];
 
@@ -30,7 +30,6 @@ export default class App extends React.Component {
     clearInterval(this.intervalId);
   }
 
-  onPress = char => {
   onPress = ({ char }) => {
     if (!this.state.isMoving && char === 'w') {
       this.setState(state => ({
@@ -129,6 +128,13 @@ export default class App extends React.Component {
           <View style={styles.componentPreviewLabel}>Preview:</View>
           {this.renderPreview(this.state.componentPreview)}
         </View>
+        <ScrollView height="2">
+          <View>{'Use your mouse and scroll!'}</View>
+          <View>{'... yeah ...'}</View>
+          <View>{'... you are ...'}</View>
+          <View>{'... scrolling ...'}</View>
+          <View>{'... awesome, right?'}</View>
+        </ScrollView>
         <KeyPress stream={process.stdin} onPress={this.onPress} />
       </View>
     );
