@@ -31,6 +31,7 @@ export default class App extends React.Component {
   }
 
   onPress = char => {
+  onPress = ({ char }) => {
     if (!this.state.isMoving && char === 'w') {
       this.setState(state => ({
         componentPreview: Math.max(0, state.componentPreview - 1),
