@@ -7,13 +7,15 @@ export default function render(
   elements: RenderElement[],
   canvasSize: Dimensions
 ) {
-  const rows = new Array(canvasSize.height).fill(new Row(canvasSize.width));
+  const rows = [];
+  for (let i = 0; i < canvasSize.height; i++) {
+    rows[i] = new Row(canvasSize.width);
+  }
 
   elements.forEach(element => {
     if (!element.body && !element.box) {
       return;
     }
-
     const height = element.box ? element.box.height : 1;
     // $FlowFixMe
     const y = (element.box || element.body).y;
@@ -23,8 +25,7 @@ export default function render(
         row.setText({
           value: element.body.value,
           start: element.body.x,
-          // $FlowFixMe
-          length: element.body.width,
+          length: element.body.value.length,
           // $FlowFixMe
           style: normalizeStyle(element.body.style),
         });
