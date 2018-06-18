@@ -16,7 +16,7 @@ type State = {
 };
 
 export default class Spinner extends React.Component<Props, State> {
-  intervalId: number = -1;
+  intervalId: * = -1;
   currentFrames: string[] = [' '];
 
   constructor(props: Props) {

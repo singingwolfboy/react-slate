@@ -54,11 +54,13 @@ export default class ContainerNode {
             ? acc.merge(child.render(canvas), { isInline: false })
             : child.render(canvas),
         null
+        // $FlowFixMe
       ).canvas
     );
 
     if (
       this.backBuffer.length !== this.frontBuffer.length ||
+      // $FlowFixMe
       this.target.forceFullDraw
     ) {
       this.target.setCursorPosition(0, 0);

@@ -57,13 +57,15 @@ export default class AbsoluteCanvas {
 
     if (layerIndex > -1) {
       this.positiveLayers[layerIndex] = isEmpty(this.positiveLayers[layerIndex])
-        ? new Array(this.size.height).fill(this.noContentLine)
+        ? // $FlowFixMe
+          new Array(this.size.height).fill(this.noContentLine)
         : this.positiveLayers[layerIndex];
       return this.positiveLayers[layerIndex];
     }
     const index = -layerIndex;
     this.negativeLayers[index] = isEmpty(this.negativeLayers[index])
-      ? new Array(this.size.height).fill(this.noContentLine)
+      ? // $FlowFixMe
+        new Array(this.size.height).fill(this.noContentLine)
       : this.negativeLayers[index];
     return this.negativeLayers[index];
   }
@@ -133,6 +135,7 @@ export default class AbsoluteCanvas {
       new Array(this.size.height).fill(this.noContentLine)
     );
     flatCanvas = this.merge(flatCanvas, relativeCanvas);
+    // $FlowFixMe
     return this.positiveLayers
       .reduce(this.merge.bind(this), flatCanvas)
       .map(line => line.replace(/\0/g, ' '));

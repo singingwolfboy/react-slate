@@ -126,7 +126,9 @@ export default class BlockLayout implements LayoutBuilder {
       type: BlockLayout.name,
       dimensions: this.getOwnDimensions(),
       placement: this.placement,
-      children: this.children.map(child => child.getJsonTree()),
+      children: this.children.map((child: BlockLayout | InlineLayout) =>
+        child.getJsonTree()
+      ),
     };
   }
 }

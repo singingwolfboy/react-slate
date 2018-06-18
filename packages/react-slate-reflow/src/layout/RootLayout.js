@@ -61,7 +61,10 @@ export default class RootLayout implements LayoutBuilder {
       type: RootLayout.name,
       dimensions: this.dimensions,
       placement: this.placement,
-      children: this.children.map(child => child.getJsonTree()),
+      // $FlowFixMe
+      children: this.children.map((child: BlockLayout | InlineLayout) =>
+        child.getJsonTree()
+      ),
     };
   }
 }
