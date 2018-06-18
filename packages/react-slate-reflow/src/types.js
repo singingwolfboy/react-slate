@@ -4,6 +4,10 @@ import Text from './nodes/Text';
 import Node from './nodes/Node';
 import Root from './nodes/Root';
 
+export interface Traversable<T> {
+  children: Array<Traversable<T>>;
+}
+
 export type Child = Node | Text;
 export type Parent = Root | Node;
 

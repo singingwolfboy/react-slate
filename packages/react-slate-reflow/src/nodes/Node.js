@@ -1,13 +1,13 @@
 /* @flow */
 
 import assert from 'assert';
-import type { Traversable } from '../lib/BinaryTree';
 import type {
   Child,
   Parent,
   LayoutProps,
   StyleProps,
   BorderProps,
+  Traversable,
 } from '../types';
 
 export default class Node implements Traversable<Child> {

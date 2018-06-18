@@ -1,8 +1,7 @@
 /* @flow */
 
 import assert from 'assert';
-import { traverse, type Traversable, type Visitor } from '../lib/BinaryTree';
-import type { Child } from '../types';
+import type { Child, Traversable } from '../types';
 import calculateLayout from '../layout/calculateLayout';
 
 type Size = {
@@ -41,10 +40,6 @@ export default class Root implements Traversable<Child> {
     child.parent = null;
 
     this.children.splice(index, 1);
-  }
-
-  traverse(visitor: Visitor<Traversable<Child>>) {
-    traverse(this, visitor);
   }
 
   calculateLayout() {
