@@ -5,8 +5,8 @@ import Root from '../nodes/Root';
 import Node from '../nodes/Node';
 import Text from '../nodes/Text';
 import RootLayout from './RootLayout';
-import BlockLayout from './BlockLayout';
-import InlineLayout from './InlineLayout';
+import ContainerLayout from './ContainerLayout';
+import UnitLayout from './UnitLayout';
 
 import type { RenderElement } from '../types';
 
@@ -21,7 +21,9 @@ export default function calculateLayout(
     const parentLayout = layoutState.peek();
 
     if (node instanceof Node) {
-      const currentLayout = new BlockLayout(node, parentLayout);
+      const currentLayout = new ContainerLayout(node, parentLayout);
+      currentLayout.isInline =
+        node.layoutProps && node.layoutProps.display === 'inline';
       currentLayout.calculatePlacement();
 
       let boxRenderElementIndex = -1;
@@ -48,7 +50,7 @@ export default function calculateLayout(
 
       return currentLayout;
     } else if (node instanceof Text) {
-      const currentLayout = new InlineLayout(node, parentLayout);
+      const currentLayout = new UnitLayout(node, parentLayout);
       currentLayout.calculatePlacement();
       renderElements.push(currentLayout.makeRenderElement());
       return currentLayout;

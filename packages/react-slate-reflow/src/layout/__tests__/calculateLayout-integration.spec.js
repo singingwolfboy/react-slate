@@ -123,6 +123,52 @@ describe('calculateLayout integration suite', () => {
       });
     });
 
+    describe('for node -> [text, node(inline) -> text]', () => {
+      function getTree() {
+        const root = new Root({ width: 20, height: 10 });
+        const node = new Node();
+        const text1 = new Text();
+        const innerNode = new Node();
+        const text2 = new Text();
+
+        innerNode.setLayoutProps({
+          display: 'inline',
+        });
+
+        text1.setBody('Hello');
+        text2.setBody(' World');
+        innerNode.insertChild(text2);
+        node.insertChild(text1);
+        node.insertChild(innerNode);
+        root.insertChild(node);
+
+        return root;
+      }
+
+      it('without style/layout props', () => {
+        const root = getTree();
+        const { layoutTree, renderElements } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
+      });
+
+      // it('with layout props', () => {
+      //   const root = getTree();
+
+      //   root.children[0].setLayoutProps({
+      //     marginLeft: 2,
+      //     marginTop: 2,
+      //     paddingTop: 1,
+      //     paddingRight: 1,
+      //     paddingBottom: 1,
+      //     paddingLeft: 1,
+      //   });
+
+      //   const { layoutTree } = root.calculateLayout();
+      //   expect(layoutTree.getJsonTree()).toMatchSnapshot();
+      // });
+    });
+
     describe('for node -> [text, node -> text]', () => {
       function getTree() {
         const root = new Root({ width: 20, height: 10 });

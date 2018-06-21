@@ -17,7 +17,7 @@ Object {
                 "x": 2,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -28,7 +28,7 @@ Object {
             "x": 2,
             "y": 2,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "children": Array [
@@ -42,7 +42,7 @@ Object {
                 "x": 2,
                 "y": 5,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -53,7 +53,7 @@ Object {
             "x": 1,
             "y": 4,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -64,7 +64,7 @@ Object {
         "x": 0,
         "y": 1,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -117,7 +117,7 @@ Object {
                 "x": 0,
                 "y": 0,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -128,7 +128,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "children": Array [
@@ -142,7 +142,7 @@ Object {
                 "x": 0,
                 "y": 1,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -153,7 +153,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -164,7 +164,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -217,7 +217,7 @@ Object {
                 "x": 0,
                 "y": 0,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -228,7 +228,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "Text2",
@@ -240,7 +240,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -254,7 +254,7 @@ Object {
                 "x": 0,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
             Object {
               "body": "Text4",
@@ -266,7 +266,7 @@ Object {
                 "x": 5,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -277,7 +277,7 @@ Object {
             "x": 0,
             "y": 2,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -288,7 +288,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -357,7 +357,7 @@ Object {
                 "x": 0,
                 "y": 1,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -368,7 +368,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "New",
@@ -380,7 +380,7 @@ Object {
             "x": 0,
             "y": 3,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -394,7 +394,7 @@ Object {
                 "x": 0,
                 "y": 5,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -405,7 +405,7 @@ Object {
             "x": 0,
             "y": 5,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -416,7 +416,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -477,7 +477,7 @@ Object {
                 "x": 0,
                 "y": 0,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -488,7 +488,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "New",
@@ -500,7 +500,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -514,7 +514,7 @@ Object {
                 "x": 0,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -525,7 +525,7 @@ Object {
             "x": 0,
             "y": 2,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -536,7 +536,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -597,7 +597,7 @@ Object {
                 "x": 1,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -608,7 +608,7 @@ Object {
             "x": 1,
             "y": 2,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "World",
@@ -620,7 +620,7 @@ Object {
             "x": 0,
             "y": 4,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -631,7 +631,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -684,7 +684,7 @@ Object {
                 "x": 0,
                 "y": 0,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -695,7 +695,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "World",
@@ -707,7 +707,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -718,7 +718,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -769,7 +769,7 @@ Object {
             "x": 1,
             "y": 1,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -783,7 +783,7 @@ Object {
                 "x": 3,
                 "y": 3,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -794,7 +794,7 @@ Object {
             "x": 1,
             "y": 2,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "World",
@@ -806,7 +806,7 @@ Object {
             "x": 1,
             "y": 5,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -817,7 +817,7 @@ Object {
         "x": 1,
         "y": 1,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -876,7 +876,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -890,7 +890,7 @@ Object {
                 "x": 0,
                 "y": 1,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -901,7 +901,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
         Object {
           "body": "World",
@@ -913,7 +913,7 @@ Object {
             "x": 0,
             "y": 2,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -924,7 +924,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -983,7 +983,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -997,7 +997,7 @@ Object {
                 "x": 1,
                 "y": 3,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -1008,7 +1008,7 @@ Object {
             "x": 1,
             "y": 3,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -1019,7 +1019,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1070,7 +1070,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "children": Array [
@@ -1084,7 +1084,7 @@ Object {
                 "x": 0,
                 "y": 1,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -1095,7 +1095,7 @@ Object {
             "x": 0,
             "y": 1,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -1106,7 +1106,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1142,6 +1142,93 @@ Array [
 ]
 `;
 
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node(inline) -> text] without style/layout props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "body": "Hello",
+          "dimensions": Object {
+            "height": 1,
+            "width": 5,
+          },
+          "placement": Object {
+            "x": 0,
+            "y": 0,
+          },
+          "type": "UnitLayout",
+        },
+        Object {
+          "children": Array [
+            Object {
+              "body": " World",
+              "dimensions": Object {
+                "height": 1,
+                "width": 6,
+              },
+              "placement": Object {
+                "x": 5,
+                "y": 0,
+              },
+              "type": "UnitLayout",
+            },
+          ],
+          "dimensions": Object {
+            "height": 1,
+            "width": 6,
+          },
+          "placement": Object {
+            "x": 5,
+            "y": 0,
+          },
+          "type": "ContainerLayout(inline)",
+        },
+      ],
+      "dimensions": Object {
+        "height": 1,
+        "width": 11,
+      },
+      "placement": Object {
+        "x": 0,
+        "y": 0,
+      },
+      "type": "ContainerLayout",
+    },
+  ],
+  "dimensions": Object {
+    "height": 1,
+    "width": 11,
+  },
+  "placement": Object {
+    "x": 0,
+    "y": 0,
+  },
+  "type": "RootLayout",
+}
+`;
+
+exports[`calculateLayout integration suite should calculate layout for node -> [text, node(inline) -> text] without style/layout props 2`] = `
+Array [
+  Object {
+    "body": Object {
+      "style": null,
+      "value": "Hello",
+      "x": 0,
+      "y": 0,
+    },
+  },
+  Object {
+    "body": Object {
+      "style": null,
+      "value": " World",
+      "x": 5,
+      "y": 0,
+    },
+  },
+]
+`;
+
 exports[`calculateLayout integration suite should calculate layout for node -> [text, text] with layout props 1`] = `
 Object {
   "children": Array [
@@ -1157,7 +1244,7 @@ Object {
             "x": 3,
             "y": 3,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "body": " World",
@@ -1169,7 +1256,7 @@ Object {
             "x": 8,
             "y": 3,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -1180,7 +1267,7 @@ Object {
         "x": 2,
         "y": 2,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1210,7 +1297,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
         Object {
           "body": " World",
@@ -1222,7 +1309,7 @@ Object {
             "x": 5,
             "y": 0,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -1233,7 +1320,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1286,7 +1373,7 @@ Object {
                 "x": 3,
                 "y": 2,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -1297,7 +1384,7 @@ Object {
             "x": 3,
             "y": 1,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -1308,7 +1395,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1353,7 +1440,7 @@ Object {
                 "x": 0,
                 "y": 0,
               },
-              "type": "InlineLayout",
+              "type": "UnitLayout",
             },
           ],
           "dimensions": Object {
@@ -1364,7 +1451,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "BlockLayout",
+          "type": "ContainerLayout",
         },
       ],
       "dimensions": Object {
@@ -1375,7 +1462,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1418,7 +1505,7 @@ Object {
             "x": 4,
             "y": 2,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -1429,7 +1516,7 @@ Object {
         "x": 2,
         "y": 1,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {
@@ -1459,7 +1546,7 @@ Object {
             "x": 0,
             "y": 0,
           },
-          "type": "InlineLayout",
+          "type": "UnitLayout",
         },
       ],
       "dimensions": Object {
@@ -1470,7 +1557,7 @@ Object {
         "x": 0,
         "y": 0,
       },
-      "type": "BlockLayout",
+      "type": "ContainerLayout",
     },
   ],
   "dimensions": Object {

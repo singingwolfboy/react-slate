@@ -1,15 +1,15 @@
 /* @flow */
 
-import InlineLayout from './InlineLayout';
+import UnitLayout from './UnitLayout';
 import Node from '../nodes/Node';
 import normalizeLayoutProps from './normalizeLayoutProps';
 import { makeBlockStyle } from './makeStyle';
 import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
 
-export default class BlockLayout implements LayoutBuilder {
+export default class ContainerLayout implements LayoutBuilder {
   node: Node;
-  parentLayout: BlockLayout;
-  children: Array<BlockLayout | InlineLayout> = [];
+  parentLayout: ContainerLayout;
+  children: Array<ContainerLayout | UnitLayout> = [];
   placement: Placement = { x: 0, y: 0 };
   dimensions: Dimensions = { width: 0, height: 0 };
   insetBounds: Bounds = {
@@ -24,9 +24,10 @@ export default class BlockLayout implements LayoutBuilder {
     bottom: 0,
     left: 0,
   };
-  lastChildLayout: ?(BlockLayout | InlineLayout) = null;
+  lastChildLayout: ?(ContainerLayout | UnitLayout) = null;
+  isInline: boolean = false;
 
-  constructor(node: Node, parentLayout: BlockLayout) {
+  constructor(node: Node, parentLayout: ContainerLayout) {
     this.node = node;
     this.parentLayout = parentLayout;
 
@@ -41,17 +42,38 @@ export default class BlockLayout implements LayoutBuilder {
   }
 
   calculatePlacement() {
-    this.placement = {
-      x:
-        this.parentLayout.placement.x +
-        this.parentLayout.insetBounds.left +
-        this.outsetBounds.left,
-      y:
-        this.parentLayout.placement.y +
-        this.parentLayout.insetBounds.top +
-        this.parentLayout.dimensions.height +
-        this.outsetBounds.top,
-    };
+    const isPreviousLayoutInline =
+      this.parentLayout.lastChildLayout instanceof UnitLayout ||
+      (this.parentLayout.lastChildLayout instanceof ContainerLayout &&
+        this.parentLayout.lastChildLayout.isInline);
+
+    if (!this.isInline || !isPreviousLayoutInline) {
+      // Block placement
+      this.placement = {
+        x:
+          this.parentLayout.placement.x +
+          this.parentLayout.insetBounds.left +
+          this.outsetBounds.left,
+        y:
+          this.parentLayout.placement.y +
+          this.parentLayout.insetBounds.top +
+          this.parentLayout.dimensions.height +
+          this.outsetBounds.top,
+      };
+    } else {
+      // Inline placement
+      this.placement = {
+        x:
+          this.parentLayout.placement.x +
+          this.parentLayout.insetBounds.left +
+          this.parentLayout.dimensions.width +
+          this.outsetBounds.left,
+        y:
+          this.parentLayout.placement.y +
+          this.parentLayout.insetBounds.top +
+          this.outsetBounds.top,
+      };
+    }
   }
 
   /**
@@ -82,22 +104,23 @@ export default class BlockLayout implements LayoutBuilder {
     };
   }
 
-  calculateDimensions(childLayout: BlockLayout | InlineLayout) {
+  calculateDimensions(childLayout: ContainerLayout | UnitLayout) {
+    // TODO: handle inline ContainerLayout
     const childDimensions = childLayout.getDimensionsWithBounds();
-    if (childLayout instanceof BlockLayout) {
+    if (childLayout instanceof ContainerLayout) {
       this.dimensions.width = Math.max(
         this.dimensions.width,
         childDimensions.width
       );
       this.dimensions.height += childDimensions.height;
-    } else if (childLayout instanceof InlineLayout) {
-      if (this.lastChildLayout instanceof BlockLayout) {
+    } else if (childLayout instanceof UnitLayout) {
+      if (this.lastChildLayout instanceof ContainerLayout) {
         this.dimensions.width = Math.max(
           this.dimensions.width,
           childDimensions.width
         );
         this.dimensions.height += childDimensions.height;
-      } else if (this.lastChildLayout instanceof InlineLayout) {
+      } else if (this.lastChildLayout instanceof UnitLayout) {
         this.dimensions.width += childDimensions.width;
       } else {
         this.dimensions.width = childDimensions.width;
@@ -123,10 +146,10 @@ export default class BlockLayout implements LayoutBuilder {
 
   getJsonTree() {
     return {
-      type: BlockLayout.name,
+      type: `${ContainerLayout.name}${this.isInline ? '(inline)' : ''}`,
       dimensions: this.getOwnDimensions(),
       placement: this.placement,
-      children: this.children.map((child: BlockLayout | InlineLayout) =>
+      children: this.children.map((child: ContainerLayout | UnitLayout) =>
         child.getJsonTree()
       ),
     };

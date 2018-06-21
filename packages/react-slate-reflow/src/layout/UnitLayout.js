@@ -1,17 +1,17 @@
 /* @flow */
 
-import BlockLayout from './BlockLayout';
+import ContainerLayout from './ContainerLayout';
 import Text from '../nodes/Text';
 import { makeInlineStyle } from './makeStyle';
-import type { LayoutBuilder, Placement, Dimensions, BodyStyle } from '../types';
+import type { LayoutBuilder, Placement, Dimensions } from '../types';
 
-export default class InlineLayout implements LayoutBuilder {
-  parentLayout: BlockLayout;
+export default class UnitLayout implements LayoutBuilder {
+  parentLayout: ContainerLayout;
   node: Text;
   placement: Placement = { x: 0, y: 0 };
   dimensions: Dimensions = { width: 0, height: 0 };
 
-  constructor(node: Text, parentLayout: BlockLayout) {
+  constructor(node: Text, parentLayout: ContainerLayout) {
     this.node = node;
     this.parentLayout = parentLayout;
     parentLayout.children.push(this);
@@ -20,7 +20,7 @@ export default class InlineLayout implements LayoutBuilder {
   }
 
   calculatePlacement() {
-    if (this.parentLayout.lastChildLayout instanceof InlineLayout) {
+    if (this.parentLayout.lastChildLayout instanceof UnitLayout) {
       this.placement = {
         x: this.parentLayout.placement.x + this.parentLayout.dimensions.width,
         y: this.parentLayout.placement.y,
@@ -51,7 +51,7 @@ export default class InlineLayout implements LayoutBuilder {
 
   getJsonTree() {
     return {
-      type: InlineLayout.name,
+      type: UnitLayout.name,
       dimensions: this.dimensions,
       placement: this.placement,
       body: this.node.body,
@@ -59,7 +59,7 @@ export default class InlineLayout implements LayoutBuilder {
   }
 }
 
-function collectStyleProps(layout: InlineLayout) {
+function collectStyleProps(layout: UnitLayout) {
   const styleProps = [];
   let currentLayout = layout.parentLayout;
   while (currentLayout && currentLayout.node) {
@@ -68,7 +68,7 @@ function collectStyleProps(layout: InlineLayout) {
         backgroundColor,
         ...inlineStyleProps
       } = currentLayout.node.styleProps;
-      styleProps.push((inlineStyleProps: BodyStyle));
+      styleProps.push(inlineStyleProps);
     }
     currentLayout = currentLayout.parentLayout;
   }

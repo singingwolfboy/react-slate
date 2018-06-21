@@ -1,12 +1,12 @@
 /* @flow */
 
-import BlockLayout from './BlockLayout';
-import InlineLayout from './InlineLayout';
+import ContainerLayout from './ContainerLayout';
+import UnitLayout from './UnitLayout';
 import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
 
 export default class RootLayout implements LayoutBuilder {
-  children: Array<BlockLayout | InlineLayout> = [];
-  lastChildLayout: ?(BlockLayout | InlineLayout) = null;
+  children: Array<ContainerLayout | UnitLayout> = [];
+  lastChildLayout: ?(ContainerLayout | UnitLayout) = null;
   placement: Placement = { x: 0, y: 0 };
   dimensions: Dimensions = { width: 0, height: 0 };
   insetBounds: Bounds = {
@@ -30,23 +30,23 @@ export default class RootLayout implements LayoutBuilder {
     return this.dimensions;
   }
 
-  calculateDimensions(childLayout: BlockLayout | InlineLayout) {
-    // TODO: make this code shareable between RootLayout and BlockLayout, since it's the same
+  calculateDimensions(childLayout: ContainerLayout | UnitLayout) {
+    // TODO: make this code shareable between RootLayout and ContainerLayout, since it's the same
     const childDimensions = childLayout.getDimensionsWithBounds();
-    if (childLayout instanceof BlockLayout) {
+    if (childLayout instanceof ContainerLayout) {
       this.dimensions.width = Math.max(
         this.dimensions.width,
         childDimensions.width
       );
       this.dimensions.height += childDimensions.height;
-    } else if (childLayout instanceof InlineLayout) {
-      if (this.lastChildLayout instanceof BlockLayout) {
+    } else if (childLayout instanceof UnitLayout) {
+      if (this.lastChildLayout instanceof ContainerLayout) {
         this.dimensions.width = Math.max(
           this.dimensions.width,
           childDimensions.width
         );
         this.dimensions.height += childDimensions.height;
-      } else if (this.lastChildLayout instanceof InlineLayout) {
+      } else if (this.lastChildLayout instanceof UnitLayout) {
         this.dimensions.width += childDimensions.width;
       } else {
         this.dimensions.width = childDimensions.width;
@@ -62,7 +62,7 @@ export default class RootLayout implements LayoutBuilder {
       dimensions: this.dimensions,
       placement: this.placement,
       // $FlowFixMe
-      children: this.children.map((child: BlockLayout | InlineLayout) =>
+      children: this.children.map((child: ContainerLayout | UnitLayout) =>
         child.getJsonTree()
       ),
     };
