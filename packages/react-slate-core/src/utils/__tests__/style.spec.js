@@ -46,5 +46,69 @@ describe('utils/style', () => {
       test('invalid', 'none', '');
       test('', 'none', '');
     });
+
+    it('should prioritize borderColor property if border property exist', () => {
+      function test(border, color, result) {
+        const {
+          stylizeArgs: { borderStyle, borderColor },
+        } = getStyleProps({
+          border,
+          borderColor: color,
+        });
+
+        expect({ borderColor, borderStyle }).toEqual(result);
+      }
+
+      test('solid #ffffff', '#000', {
+        borderStyle: 'solid',
+        borderColor: '#000',
+      });
+
+      test('double #000', 'rgb(0, 0, 0)', {
+        borderStyle: 'double',
+        borderColor: 'rgb(0, 0, 0)',
+      });
+    });
+
+    it('should prioritize borderStyle property if border property exist', () => {
+      function test(border, style, result) {
+        const {
+          stylizeArgs: { borderStyle, borderColor },
+        } = getStyleProps({
+          border,
+          borderStyle: style,
+        });
+
+        expect({ borderColor, borderStyle }).toEqual(result);
+      }
+
+      test('solid #ffffff', 'double', {
+        borderStyle: 'double',
+        borderColor: '#ffffff',
+      });
+    });
+  });
+
+  it('should correctly parse an array', () => {
+    expect(getStyleProps([{ color: 'red' }])).toEqual(
+      getStyleProps({ color: 'red' })
+    );
+
+    expect(getStyleProps([{ color: 'red' }, { color: 'blue' }])).toEqual(
+      getStyleProps({ color: 'blue' })
+    );
+
+    expect(
+      getStyleProps([
+        { color: 'red' },
+        { color: 'blue', backgroundColor: 'pink' },
+        true && { marginBottom: 2 },
+        undefined,
+        null,
+        false,
+      ])
+    ).toEqual(
+      getStyleProps({ color: 'blue', backgroundColor: 'pink', marginBottom: 2 })
+    );
   });
 });
