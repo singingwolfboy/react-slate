@@ -12,15 +12,15 @@ export type Child = Node | Text;
 export type Parent = Root | Node;
 
 export type LayoutProps = {
-  marginLeft: ?number,
-  marginRight: ?number,
-  marginTop: ?number,
-  marginBottom: ?number,
-  paddingLeft: ?number,
-  paddingRight: ?number,
-  paddingTop: ?number,
-  paddingBottom: ?number,
-  display: 'block' | 'inline',
+  marginLeft?: number,
+  marginRight?: number,
+  marginTop?: number,
+  marginBottom?: number,
+  paddingLeft?: number,
+  paddingRight?: number,
+  paddingTop?: number,
+  paddingBottom?: number,
+  display?: 'block' | 'inline',
 };
 
 export type Bounds = {
@@ -31,22 +31,22 @@ export type Bounds = {
 };
 
 export type BoxStyle = {
-  backgroundColor: ?string,
+  backgroundColor?: string,
 };
 
 export type BodyStyle = {
-  color: ?string,
-  fontWeight: ?string,
-  fontStyle: ?string,
-  textDecoration: ?string,
-  textTransform: ?('none' | 'capitalize' | 'uppercase' | 'lowercase'),
+  color?: string,
+  fontWeight?: string,
+  fontStyle?: string,
+  textDecoration?: string,
+  textTransform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase',
 };
 
 export type StyleProps = BoxStyle & BodyStyle;
 
 export type BorderProps = {
   thickness: 'single-line' | 'double-line',
-  color: ?string,
+  color?: string,
 };
 
 export type Box = {
