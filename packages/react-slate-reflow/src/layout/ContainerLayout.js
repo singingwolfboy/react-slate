@@ -1,9 +1,9 @@
 /* @flow */
 
 import UnitLayout from './UnitLayout';
-import Node from '../nodes/Node';
 import normalizeLayoutProps from './normalizeLayoutProps';
 import { makeBlockStyle } from './makeStyle';
+import type Node from '../nodes/Node';
 import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
 
 export default class ContainerLayout implements LayoutBuilder {

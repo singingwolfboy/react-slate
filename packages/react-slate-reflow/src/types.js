@@ -1,8 +1,8 @@
 /* @flow */
 
-import Text from './nodes/Text';
-import Node from './nodes/Node';
-import Root from './nodes/Root';
+import type Text from './nodes/Text';
+import type Node from './nodes/Node';
+import type Root from './nodes/Root';
 
 export interface Traversable<T> {
   children: Array<Traversable<T>>;
