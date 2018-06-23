@@ -33,11 +33,12 @@ export default class ContainerLayout implements LayoutBuilder {
 
     parentLayout && parentLayout.children.push(this);
     if (node && node.layoutProps) {
-      const { insetBounds, outsetBounds } = normalizeLayoutProps(
+      const { insetBounds, outsetBounds, isInline } = normalizeLayoutProps(
         node.layoutProps
       );
       this.insetBounds = insetBounds;
       this.outsetBounds = outsetBounds;
+      this.isInline = isInline;
     }
   }
 
@@ -105,27 +106,33 @@ export default class ContainerLayout implements LayoutBuilder {
   }
 
   calculateDimensions(childLayout: ContainerLayout | UnitLayout) {
-    // TODO: handle inline ContainerLayout
     const childDimensions = childLayout.getDimensionsWithBounds();
-    if (childLayout instanceof ContainerLayout) {
+    const isChildLayoutInline =
+      childLayout instanceof UnitLayout ||
+      (childLayout instanceof ContainerLayout && childLayout.isInline);
+    const isLastChildElementInline =
+      this.lastChildLayout instanceof UnitLayout ||
+      (this.lastChildLayout instanceof ContainerLayout &&
+        this.lastChildLayout.isInline);
+
+    if (!this.lastChildLayout) {
+      // First child in this parent layout.
+      this.dimensions.width = childDimensions.width;
+      this.dimensions.height = childDimensions.height;
+    } else if (!isChildLayoutInline || !isLastChildElementInline) {
+      // Either the child is a block element or previous child was a block element.
       this.dimensions.width = Math.max(
         this.dimensions.width,
         childDimensions.width
       );
       this.dimensions.height += childDimensions.height;
-    } else if (childLayout instanceof UnitLayout) {
-      if (this.lastChildLayout instanceof ContainerLayout) {
-        this.dimensions.width = Math.max(
-          this.dimensions.width,
-          childDimensions.width
-        );
-        this.dimensions.height += childDimensions.height;
-      } else if (this.lastChildLayout instanceof UnitLayout) {
-        this.dimensions.width += childDimensions.width;
-      } else {
-        this.dimensions.width = childDimensions.width;
-        this.dimensions.height = childDimensions.height;
-      }
+    } else {
+      // Both child and previous child are an inline elements.
+      this.dimensions.width += childDimensions.width;
+      this.dimensions.height = Math.max(
+        this.dimensions.height,
+        childDimensions.height
+      );
     }
     this.lastChildLayout = childLayout;
   }

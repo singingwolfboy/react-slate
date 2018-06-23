@@ -22,8 +22,6 @@ export default function calculateLayout(
 
     if (node instanceof Node) {
       const currentLayout = new ContainerLayout(node, parentLayout);
-      currentLayout.isInline =
-        node.layoutProps && node.layoutProps.display === 'inline';
       currentLayout.calculatePlacement();
 
       let boxRenderElementIndex = -1;

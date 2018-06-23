@@ -152,21 +152,24 @@ describe('calculateLayout integration suite', () => {
         expect(renderElements).toMatchSnapshot();
       });
 
-      // it('with layout props', () => {
-      //   const root = getTree();
+      it('with layout props', () => {
+        const root = getTree();
 
-      //   root.children[0].setLayoutProps({
-      //     marginLeft: 2,
-      //     marginTop: 2,
-      //     paddingTop: 1,
-      //     paddingRight: 1,
-      //     paddingBottom: 1,
-      //     paddingLeft: 1,
-      //   });
+        root.children[0].setLayoutProps({
+          marginLeft: 1,
+          marginTop: 1,
+        });
 
-      //   const { layoutTree } = root.calculateLayout();
-      //   expect(layoutTree.getJsonTree()).toMatchSnapshot();
-      // });
+        root.children[0].children[1].setLayoutProps({
+          marginLeft: 1,
+          paddingTop: 1,
+          display: 'inline',
+        });
+
+        const { layoutTree, renderElements } = root.calculateLayout();
+        expect(layoutTree.getJsonTree()).toMatchSnapshot();
+        expect(renderElements).toMatchSnapshot();
+      });
     });
 
     describe('for node -> [text, node -> text]', () => {

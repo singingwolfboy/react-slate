@@ -4,7 +4,7 @@ import type { LayoutProps, Bounds } from '../types';
 
 export default function normalizeLayoutProps(
   layoutProps: LayoutProps
-): { insetBounds: Bounds, outsetBounds: Bounds } {
+): { insetBounds: Bounds, outsetBounds: Bounds, isInline: boolean } {
   return {
     insetBounds: {
       top: Math.max(layoutProps.paddingTop || 0, 0),
@@ -18,5 +18,6 @@ export default function normalizeLayoutProps(
       bottom: Math.max(layoutProps.marginBottom || 0, 0),
       left: Math.max(layoutProps.marginLeft || 0, 0),
     },
+    isInline: layoutProps.display === 'inline',
   };
 }
