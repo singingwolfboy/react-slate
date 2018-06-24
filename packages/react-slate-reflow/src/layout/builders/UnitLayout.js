@@ -1,9 +1,9 @@
 /* @flow */
 
-import { makeInlineStyle } from './makeStyle';
+import { makeInlineStyle } from '../makeStyle';
 import type ContainerLayout from './ContainerLayout';
-import type Text from '../nodes/Text';
-import type { LayoutBuilder, Placement, Dimensions } from '../types';
+import type Text from '../../nodes/Text';
+import type { LayoutBuilder, Placement, Dimensions } from '../../types';
 
 export default class UnitLayout implements LayoutBuilder {
   parentLayout: ContainerLayout;

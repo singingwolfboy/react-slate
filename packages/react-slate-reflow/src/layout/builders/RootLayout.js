@@ -2,7 +2,7 @@
 
 import ContainerLayout from './ContainerLayout';
 import UnitLayout from './UnitLayout';
-import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../types';
+import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../../types';
 
 export default class RootLayout implements LayoutBuilder {
   children: Array<ContainerLayout | UnitLayout> = [];
