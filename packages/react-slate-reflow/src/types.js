@@ -21,6 +21,8 @@ export type LayoutProps = {
   paddingTop?: number,
   paddingBottom?: number,
   display?: 'block' | 'inline',
+  width?: number | string,
+  height?: number | string,
 };
 
 export type Bounds = {

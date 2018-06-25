@@ -1,15 +1,16 @@
 /* @flow */
 
 import { makeInlineStyle } from '../makeStyle';
+import Dimensions from '../Dimensions';
 import type ContainerLayout from './ContainerLayout';
 import type Text from '../../nodes/Text';
-import type { LayoutBuilder, Placement, Dimensions } from '../../types';
+import type { LayoutBuilder, Placement } from '../../types';
 
 export default class UnitLayout implements LayoutBuilder {
   parentLayout: ContainerLayout;
   node: Text;
   placement: Placement = { x: 0, y: 0 };
-  dimensions: Dimensions = { width: 0, height: 0 };
+  dimensions = new Dimensions();
 
   constructor(node: Text, parentLayout: ContainerLayout) {
     this.node = node;
@@ -52,7 +53,7 @@ export default class UnitLayout implements LayoutBuilder {
   getJsonTree() {
     return {
       type: UnitLayout.name,
-      dimensions: this.dimensions,
+      dimensions: this.dimensions.valueOf(),
       placement: this.placement,
       body: this.node.body,
     };
@@ -70,7 +71,7 @@ function collectStyleProps(layout: UnitLayout) {
       } = currentLayout.node.styleProps;
       styleProps.push(inlineStyleProps);
     }
-    currentLayout = currentLayout.parentLayout;
+    currentLayout = currentLayout.parentLayout || null;
   }
   return styleProps.reverse();
 }

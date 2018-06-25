@@ -1,17 +1,19 @@
 /* @flow */
 
 import UnitLayout from './UnitLayout';
+import RootLayout from './RootLayout';
+import Dimensions from '../Dimensions';
 import normalizeLayoutProps from '../normalizeLayoutProps';
 import { makeBlockStyle } from '../makeStyle';
 import type Node from '../../nodes/Node';
-import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../../types';
+import type { Bounds, LayoutBuilder, Placement } from '../../types';
 
 export default class ContainerLayout implements LayoutBuilder {
   node: Node;
-  parentLayout: ContainerLayout;
+  parentLayout: ContainerLayout | RootLayout;
   children: Array<ContainerLayout | UnitLayout> = [];
   placement: Placement = { x: 0, y: 0 };
-  dimensions: Dimensions = { width: 0, height: 0 };
+  dimensions = new Dimensions();
   insetBounds: Bounds = {
     top: 0,
     right: 0,
@@ -27,18 +29,26 @@ export default class ContainerLayout implements LayoutBuilder {
   lastChildLayout: ?(ContainerLayout | UnitLayout) = null;
   isInline: boolean = false;
 
-  constructor(node: Node, parentLayout: ContainerLayout) {
+  constructor(node: Node, parentLayout: ContainerLayout | RootLayout) {
     this.node = node;
     this.parentLayout = parentLayout;
 
     parentLayout && parentLayout.children.push(this);
     if (node && node.layoutProps) {
-      const { insetBounds, outsetBounds, isInline } = normalizeLayoutProps(
-        node.layoutProps
-      );
+      const {
+        insetBounds,
+        outsetBounds,
+        isInline,
+        getWidthConstrain,
+        getHeightConstrain,
+      } = normalizeLayoutProps(node.layoutProps);
       this.insetBounds = insetBounds;
       this.outsetBounds = outsetBounds;
       this.isInline = isInline;
+      getWidthConstrain &&
+        this.dimensions.setWidthConstrain(getWidthConstrain(this));
+      getHeightConstrain &&
+        this.dimensions.setWidthConstrain(getHeightConstrain(this));
     }
   }
 

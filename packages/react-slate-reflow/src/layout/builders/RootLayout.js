@@ -2,13 +2,14 @@
 
 import ContainerLayout from './ContainerLayout';
 import UnitLayout from './UnitLayout';
-import type { Bounds, LayoutBuilder, Placement, Dimensions } from '../../types';
+import Dimensions from '../Dimensions';
+import type { Bounds, LayoutBuilder, Placement } from '../../types';
 
 export default class RootLayout implements LayoutBuilder {
   children: Array<ContainerLayout | UnitLayout> = [];
   lastChildLayout: ?(ContainerLayout | UnitLayout) = null;
   placement: Placement = { x: 0, y: 0 };
-  dimensions: Dimensions = { width: 0, height: 0 };
+  dimensions = new Dimensions();
   insetBounds: Bounds = {
     top: 0,
     right: 0,
@@ -34,7 +35,7 @@ export default class RootLayout implements LayoutBuilder {
   getJsonTree() {
     return {
       type: RootLayout.name,
-      dimensions: this.dimensions,
+      dimensions: this.dimensions.valueOf(),
       placement: this.placement,
       // $FlowFixMe
       children: this.children.map((child: ContainerLayout | UnitLayout) =>

@@ -1,7 +1,7 @@
 /* @flow */
 
 import Row from './Row';
-import type { RenderElement, Dimensions, StyleProps } from '../types';
+import type { RenderElement, StyleProps, Dimensions } from '../types';
 
 export default function render(
   elements: RenderElement[],
